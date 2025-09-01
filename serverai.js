@@ -27,6 +27,11 @@ mongoose.connect(mongodbAtlasUrl).then(()=>{
 
 app.use("/needy",needyRoute);
 
+app.use("/",(req,resp)=>
+    {
+        resp.send("Welcome");
+})
+
 app.listen(process.env.PORT, function() {
     console.log(`Server AI Started @ ${process.env.PORT}`);
 })
